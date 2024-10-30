@@ -1,0 +1,109 @@
+@import "../../../../../mixins.scss";
+
+.search-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+input[type="text"] {
+    z-index: 999;
+    width: 800px;
+    height: 70px;
+    padding: 10px 40px 10px 20px;
+    border: 1px solid #dcdcdc;
+    border-radius: 24px;
+    font-size: 32px;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    position: sticky;
+    top: 10px;
+    left: 0;
+    animation: enhance-header linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 200px;
+}
+
+@keyframes enhance-header {
+
+    to {
+        width: 300px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+}
+
+input[type="text"]:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]::placeholder {
+    color: #a0a0a0;
+}
+
+
+.movies-section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 16px;
+    padding: 20px;
+}
+
+.movie {
+    text-align: center;
+
+    img {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: filter 0.3s ease; /* Transiciones suaves */
+    }
+
+    img:hover {
+        filter: blur(2px); /* Aplica un desenfoque sutil */
+    }
+}
+
+@include mobile { 
+    .movies-section {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    input[type="text"] {
+        width: 350px;
+        height: 55px;
+        font-size: 32px;
+    }
+}
+
+@include tablet { 
+    .movies-section {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    input[type="text"] {
+        width: 550px;
+        height: 65px;
+        font-size: 32px;
+    }
+}
+
+@include desktop { 
+    .movies-section {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    input[type="text"] {
+        width: 800px;
+        height: 70px;
+        font-size: 32px;
+    }
+}
+
+

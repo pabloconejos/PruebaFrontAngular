@@ -1,0 +1,10 @@
+<div class="search-container">
+    
+    <input class="input-search" type="text" placeholder="Buscar...">
+
+    <section class="movies-section">
+        <div *ngFor="let movie of movies" class="movie">
+            <img [src]="'https://image.tmdb.org/t/p/original/'+movie.poster_path" alt="">
+        </div>
+    </section>
+</div>

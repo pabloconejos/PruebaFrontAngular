@@ -1,0 +1,26 @@
+<div class="layout">
+    
+    <div class="main-section">
+        <aside class="border" id="sidebar">
+            <nav>
+                <ul>
+                    <li class="border" routerLink="search" routerLinkActive="active-link">
+                        <span class="link-text">Search</span>
+                    </li>
+                    <li class="border" routerLink="favs" routerLinkActive="active-link">
+                        <span class="link-text">Favs</span>
+                    </li>
+                    <li class="border" routerLink="ranking" routerLinkActive="active-link">
+                        <span class="link-text">Rankings</span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main>
+            <router-outlet/>
+        </main>
+    </div>
+    
+    
+</div>

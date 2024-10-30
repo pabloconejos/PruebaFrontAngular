@@ -1,0 +1,57 @@
+@import './mixins.scss';
+/* You can add global styles to this file, and also import other style files */
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.15; /* mejorar la legibilidad */
+    -webkit-text-size-adjust: 100%; /* evitar que el texto se ajuste automáticamente */
+}
+
+body {
+    font-family: sans-serif; /* define una fuente por defecto */
+    font-size: 16px; /* tamaño de fuente por defecto */
+    line-height: 1.5; /* altura de línea */
+    color: #333; /* color de texto por defecto */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal; /* eliminar el peso de fuente por defecto */
+}
+
+h1 {
+    font-size: 2em; /* ajustar el tamaño de h1 */
+}
+
+ul, ol {
+    list-style: none; /* eliminar viñetas y numeración */
+}
+
+img {
+    max-width: 100%; /* hacer que las imágenes sean responsivas */
+    height: auto; /* mantener la proporción de las imágenes */
+}
+
+a {
+    text-decoration: none; /* eliminar el subrayado de los enlaces */
+    color: inherit; /* heredar el color del texto */
+}
+
+button {
+    font-family: inherit; /* usar la misma fuente que el resto del texto */
+    font-size: inherit; /* usar el mismo tamaño de fuente */
+    border: none; /* eliminar el borde */
+    background: none; /* eliminar el fondo */
+    cursor: pointer; /* cambiar el cursor al pasar el mouse */
+}
+
+input, textarea, select {
+    font-family: inherit; /* usar la misma fuente que el resto del texto */
+    font-size: inherit; /* usar el mismo tamaño de fuente */
+}
+
+/* Añadir más reglas según sea necesario */
