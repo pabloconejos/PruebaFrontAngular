@@ -1,19 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpInterceptorFn } from '@angular/common/http';
 import { environment } from '../../../environment';
 
-@Injectable()
-export class AuthInterceptor implements HttpInterceptor {
-  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    let cloneReq = req;
-    cloneReq = req.clone({
-      setHeaders: {
-        'Authorization': `Bearer ${environment.accesTokenAuth}`
-      }
-    });
-    
+export const authInterceptor: HttpInterceptorFn = (req, next) => {
+  const clonedRequest = req.clone({
+    setHeaders: {
+      'Authorization': `Bearer ${environment.accesTokenAuth}`
+    }
+  });
 
-    return next.handle(cloneReq);
-  }
-}
+  return next(clonedRequest);
+};
